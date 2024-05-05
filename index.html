@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app" class="app-container">
+      <h1 class="title">{{ title }}</h1>
+      <div class="container">
+        <form class="todo-form" @submit.prevent="handleSubmit">
+          <label for="addTodo" class="label">Add List</label>
+          <input
+            type="text"
+            name="addTodo"
+            id="addInput"
+            class="input"
+            v-model="newItem"
+            required
+          />
+          <button type="submit" name="button" class="button">Add</button>
+        </form>
+        <div class="mark-all-container" v-if="newList.length > 0">
+          <button @click="toggleMark" class="mark-all-button">
+            {{markUnmarkButton}}
+          </button>
+          <button
+            @click="showModal"
+            class="mark-all-button"
+            id="deleteBtn"
+          >
+            Delete All
+          </button>
+        </div>
+        <div class="list-container">
+          <ul v-for="(item, i) in newList" :key="i" class="list">
+            <input type="checkbox" v-model="item.done" class="checkbox" />
+            <li
+              :class="{ 'list-item': true, done: item.done }"
+              class="item-name"
+            >
+              {{ item.name }}
+            </li>
+            <button @click="removeItem(item)" class="remove-button">
+              Remove
+            </button>
+          </ul>
+        </div>
+      </div> 
+
+
+      <!-- modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <p>Are u sure u want to delete All</p>
+          <button @click="deleteAll">Delete</button>
+          <button @click="hideModal">No</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

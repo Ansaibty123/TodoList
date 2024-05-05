@@ -1,0 +1,109 @@
+.done {
+  text-decoration: line-through;
+}
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+background-color: rgb(66, 214, 199);
+  justify-content: center;
+  height: 100vh;
+  width: auto;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 60px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  
+}
+.label {
+  display: block; /* or inline-block */
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: rgb(1, 32, 33);
+}
+#addInput {
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: blue;
+  border-color: aliceblue;
+}
+.button {
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  border-color: aquamarine;
+  color: rgb(12, 154, 45);
+  margin-bottom: 15px;
+}
+.mark-all-button {
+  height: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  border-color: aquamarine;
+  color: rgb(12, 154, 45);
+  margin-bottom: 15px;
+}
+.list{
+ display: flex;
+ justify-content: space-between;
+ list-style-type: none;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+}
+.item-name{
+    width: auto;
+    height: 20px;
+    font-size: 25px;
+    color: rgb(91, 91, 143);
+}
+.remove-button{
+    width: auto;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: aquamarine;
+    color: rgb(97, 168, 59);
+    margin-bottom: 15px;
+}
+#deleteBtn{
+  display: none;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 25% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
