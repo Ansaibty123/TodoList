@@ -27,6 +27,9 @@ const app = new Vue({
       this.newItem = "";
       this.addToSessionStorage();
     },
+    cancelBtn() {
+      this.unMarkAll();
+    },
 
     removeItem(item) {
       const itemIndex = this.newList.indexOf(item);
@@ -85,6 +88,11 @@ const app = new Vue({
       if (deleteAll) {
         deleteAll.style.display = newValue ? "inline-block" : "none";
       }
+      const cancel = document.getElementById("cancelBtn");
+      if (cancel) {
+        cancel.style.display = newValue ? "inline-block" : "none";
+      }
     },
-  },
+  }
+ 
 });

@@ -22,16 +22,15 @@
           />
           <button type="submit" name="button" class="button">Add</button>
         </form>
-        <div class="mark-all-container" v-if="newList.length > 0">
+        <div class="button-all-container" v-if="newList.length > 0">
           <button @click="toggleMark" class="mark-all-button">
             {{markUnmarkButton}}
           </button>
-          <button
-            @click="showModal"
-            class="mark-all-button"
-            id="deleteBtn"
-          >
+          <button @click="showModal" class="mark-all-button" id="deleteBtn">
             Delete All
+          </button>
+          <button @click="cancelBtn" class="mark-all-button" id="cancelBtn">
+            Cancel
           </button>
         </div>
         <div class="list-container">
@@ -48,8 +47,7 @@
             </button>
           </ul>
         </div>
-      </div> 
-
+      </div>
 
       <!-- modal -->
       <div id="myModal" class="modal">
